@@ -18,7 +18,7 @@ steps:
   inputs:
     gradleWrapperFile: '$(Build.Repository.LocalPath)/gradlew'
     workingDirectory: '$(Build.Repository.LocalPath)'
-    tasks: 'clean build test assembleRelease assembleDebug assembleAndroidTest'
+    tasks: 'clean build test assembleRelease'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
@@ -28,7 +28,7 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    Contents: '**/*.aap'
+    Contents: '**/*.apk'
     TargetFolder: '$(build.artifactstagingdirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
