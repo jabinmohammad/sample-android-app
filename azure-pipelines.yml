@@ -42,5 +42,5 @@ steps:
     downloadDirectory: '$(System.DefaultWorkingDirectory)'
     feedsToUse: 'internal'
     vstsFeed: '20e33503-3aa8-4c6e-8db7-a67458d63e0d'
-    vstsFeedPackage: 'Android'
-    vstsPackageVersion: '1.0.0'
+    vstsFeedPackage: 'sample-android-app'
+    vstsPackageVersion: 'patch'
