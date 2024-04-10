@@ -36,6 +36,12 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
+jobs:
+  - job: Job1
+    steps:
+      - script: echo Hello Job1!
+
+
 - task: UniversalPackages@0
   inputs:
     command: 'download'
