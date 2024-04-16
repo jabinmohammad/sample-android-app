@@ -35,18 +35,11 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-
-jobs:
-  - job: Job1
-    steps:
-      - script: echo Hello Job1!
-
-
 - task: UniversalPackages@0
   inputs:
-    command: 'download'
-    downloadDirectory: '$(System.DefaultWorkingDirectory)'
-    feedsToUse: 'internal'
-    vstsFeed: '20e33503-3aa8-4c6e-8db7-a67458d63e0d'
-    vstsFeedPackage: 'sample-android-app'
-    vstsPackageVersion: 'patch'
+    command: 'publish'
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: '20e33503-3aa8-4c6e-8db7-a67458d63e0d'
+    vstsFeedPackagePublish: 'sample_package_app.apk'
+    versionOption: 'patch'
